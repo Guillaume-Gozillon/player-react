@@ -1,3 +1,5 @@
+import { playAudio } from '../util'
+
 const LibrarySong = ({ song, songs, id, setCurrentSong, audioRef, isPlaying, setSongs }) => {
     const songSelectHandler = () => {
         setCurrentSong(song)
@@ -18,6 +20,8 @@ const LibrarySong = ({ song, songs, id, setCurrentSong, audioRef, isPlaying, set
         })
 
         setSongs(newSongs)
+
+        playAudio(isPlaying, audioRef)
         
         audioRef.current.play()
 

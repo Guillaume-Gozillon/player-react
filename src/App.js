@@ -1,10 +1,13 @@
 import React, { useState, useRef } from "react";
+
+import "./style/app.scss"
+import data from './data'
+
 import Player from "./components/Player";
 import Song from "./components/Song";
-import "./style/app.scss"
 import Library from "./components/Library";
-import data from './util'
 import Nav from "./components/Nav"
+
 
 function App() {
   // Ref to select specific HTMLElement
@@ -42,6 +45,9 @@ function App() {
         currentSong={currentSong}
         setSongInfo={setSongInfo}
         songInfo={songInfo}
+        songs={songs}
+        setCurrentSong={setCurrentSong} 
+        setSongs={setSongs}
       />
       <Library 
         audioRef={audioRef} 
