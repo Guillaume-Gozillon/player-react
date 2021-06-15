@@ -1,16 +1,26 @@
-const LibrarySong = ({ song, songs, id, setCurrentSong, audioRef, isPlaying, setSongs }) => {
+import { playAudio } from "../util";
+
+const LibrarySong = ({ 
+    song, 
+    songs, 
+    id, 
+    setCurrentSong, 
+    audioRef, 
+    isPlaying, 
+    setSongs 
+}) => {
     const songSelectHandler = async () => {
         await setCurrentSong(song)
         // Add active state
         const newSongs = songs.map(song => {
             if (song.id === id) {
-                return{
+                return {
                     ...song,
                     active: true
-                } 
+                }
             }
             else {
-                return{
+                return {
                     ...song,
                     active: false
                 }
@@ -18,15 +28,12 @@ const LibrarySong = ({ song, songs, id, setCurrentSong, audioRef, isPlaying, set
         })
 
         setSongs(newSongs)
-
-        if (isPlaying) audioRef.current.play()
-        
-        audioRef.current.play()
+        playAudio(isPlaying, audioRef)
     }
 
     return (
-        <div 
-            onClick={songSelectHandler} 
+        <div
+            onClick={songSelectHandler}
             className={`library-song ${song.active ? 'selected' : ""}`}>
             <img alt={song.name} src={song.cover}></img>
             <div className="song-description">
