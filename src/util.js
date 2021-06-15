@@ -9,7 +9,7 @@ function chillHop() {
       audio :"https://mp3.chillhop.com/serve.php/?mp3=9363",
       color: ['#95494C', '#FCF1DD'],
       id: uuidv4(),
-      active: false
+      active: true
     },
     {
       name: 'Lagoons',
@@ -24,7 +24,7 @@ function chillHop() {
       name: 'Sails',
       artist: 'Strehlow, Aylior',
       cover: 'https://chillhop.com/wp-content/uploads/2020/06/49f6e32ca521fbad46a1b281e3893cf6254bf11d-1024x1024.jpg',
-      audio :"https://mp3.chillhop.com/serve.php/?mp3=9355",
+      audio :"https://mp3.chillhop.com/serve.php/?mp3=9364",
       color: ['#95494C', '#FCF1DD'],
       id: uuidv4(),
       active: false
